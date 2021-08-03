@@ -9,7 +9,7 @@
     <h1>Leaderboard!</h1>
     <div class="content">
         <div class="table">
-            <div class="table-title">
+            <div class="content-title">
                 <h2>Recent score</h2>
                 <button>Refresh</button>
             </div>
@@ -25,7 +25,15 @@
             </div>
         </div>
         <div class="form">
-            <form></form>
+            <div class="content-title">
+                <h2>Add your Score</h2>
+            </div>
+            <form>
+                <input placeholder="Your Name" class="name-input" type="text" name="last" maxlength="30" id="name-input" />
+                <input placeholder="Your Score" class="score-input" type="text" name="score" maxlength="30" id="score-input"/>
+                <br>
+                <button type="submit" class="submit">Submit</button>
+            </form>
         </div>
     </div>
 </body>
