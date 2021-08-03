@@ -1,10 +1,10 @@
 body {
   width: 100vw;
-  margin: 0px 0px;
+  overflow-x: hidden;
+  overflow-y: hidden;
   height: 100vh;
   display: flex;
   flex-direction: column;
-
 }
 
 ul {
@@ -25,7 +25,7 @@ li {
   text-decoration: none;
 }
 
-h1{
+h1 {
   font-size: 3vw;
   margin-top: 2.5%;
   margin-bottom: 2.5%;
@@ -34,7 +34,7 @@ h1{
   height: 10%;
 }
 
-.content{
+.content {
   display: grid;
   grid-auto-columns: 1fr;
   grid-auto-flow: column;
@@ -50,11 +50,11 @@ h1{
   gap: 10%;
 }
 
-h2{
+h2 {
   font-size: 30px;
 }
 
-.list{
+.list {
   margin-left: auto;
   margin-right: auto;
   display: grid;
@@ -68,9 +68,12 @@ h2{
   border-width: 1px;
 }
 
-.score{
+.score {
+  display: flex;
   text-align: start;
   text-justify: center;
+  align-items: center;
+  align-content: center;
   background-color: gray;
   border: black;
   border-style: solid;
@@ -88,22 +91,22 @@ input {
   margin-bottom: 7.142857142857145%;
 }
 
-form{
+form {
   margin-left: auto;
   margin-right: auto;
   width: 80%;
   height: 80%;
 }
 
-.submit{
+.submit {
   margin-left: 90%;
   width: 10%;
 }
 
-button{
+button {
   height: 14.28571428571429%;
 }
 
-.score:nth-child(odd){
+.score:nth-child(odd) {
   background-color: white;
 }
