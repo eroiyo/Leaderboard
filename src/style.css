@@ -71,7 +71,6 @@ h2 {
 .score {
   display: flex;
   text-align: start;
-  text-justify: center;
   align-items: center;
   align-content: center;
   background-color: gray;
