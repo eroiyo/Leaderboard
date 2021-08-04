@@ -14,44 +14,44 @@ const scoreInput = document.getElementById('score-input');
 const scores = new Request();
 
 function ShowOne(object) {
-    const div = document.createElement('div');
-    div.textContent = `${object.user}: ${object.score}`;
-    div.classList.add('score');
-    list.appendChild(div);
+  const div = document.createElement('div');
+  div.textContent = `${object.user}: ${object.score}`;
+  div.classList.add('score');
+  list.appendChild(div);
 }
 
 function showAll(objectList) {
-    objectList.forEach(object => {
-        ShowOne(object);
-    });
+  objectList.forEach(object => {
+  ShowOne(object);
+  });
 }
 
 function antiShowall(list) {
-    while (list.lastElementChild) {
-        list.removeChild(list.lastElementChild);
-    }
+  while (list.lastElementChild) {
+  list.removeChild(list.lastElementChild);
+  }
 }
 
 function refresh(scores) {
-    setTimeout(async () => {
-        await scores.getScore();
-        antiShowall(list)
-        showAll(scores.scoreList);
+  setTimeout(async () => {
+    await scores.getScore();
+    antiShowall(list)
+    showAll(scores.scoreList);
     }, 10);
 }
 
 refreshBtn.addEventListener('click', () => {
-    refresh(scores);
+  refresh(scores);
 })
 
 form.addEventListener('submit', (event) => {
-    submitOrNota(event, scoreInput, nameInput)
-    refresh(scores);
+  submitOrNota(event, scoreInput, nameInput)
+  refresh(scores);
 })
 
 
 const init = async () => {
-    refresh(scores)
+  refresh(scores)
 };
 
 /* eslint-disable*/
