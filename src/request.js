@@ -20,6 +20,6 @@ export default class Request {
     });
     const list = JSON.parse(await promise);
     this.scoreList = list.result;
-    this.scoreList.sort((a, b) =>  b.score - a.score );
+    this.scoreList.sort((a, b) => b.score - a.score);
   }
 }
