@@ -2,8 +2,8 @@
 import _ from 'lodash';
 /* eslint-enable */
 import './style.css';
-import Request from './request';
-import submitOrNota from './form';
+import Request from './request.js';
+import submitOrNota from './form.js';
 
 const refreshBtn = document.getElementById('refresh');
 const form = document.getElementById('form');
@@ -21,40 +21,38 @@ function ShowOne(object) {
 }
 
 function showAll(objectList) {
-  objectList.forEach(object => {
-  ShowOne(object);
+  objectList.forEach((object) => {
+    ShowOne(object);
   });
 }
 
 function antiShowall(list) {
   while (list.lastElementChild) {
-  list.removeChild(list.lastElementChild);
+    list.removeChild(list.lastElementChild);
   }
 }
 
 function refresh(scores) {
   setTimeout(async () => {
     await scores.getScore();
-    antiShowall(list)
+    antiShowall(list);
     showAll(scores.scoreList);
-    }, 10);
+  }, 10);
 }
 
 refreshBtn.addEventListener('click', () => {
   refresh(scores);
-})
+});
 
 form.addEventListener('submit', (event) => {
-  submitOrNota(event, scoreInput, nameInput)
+  submitOrNota(event, scoreInput, nameInput);
   refresh(scores);
-})
-
+});
 
 const init = async () => {
-  refresh(scores)
+  refresh(scores);
 };
 
 /* eslint-disable*/
 onload = init();
 /* eslint-enable */
-import './style.css';

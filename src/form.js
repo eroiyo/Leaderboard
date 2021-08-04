@@ -8,25 +8,25 @@ function send(e, nameInput, scoreInput) {
   request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
   request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
-    alert(request.responseText);
+      alert(request.responseText);
     }
   };
   request.send(params);
 }
 
 function numberValidation(scoreInput) {
-  var n = parseInt(scoreInput.value, 10);
-  if (isNaN(n)) {
-    alert("insert a numeric value for score");
+  let n = parseInt(scoreInput.value, 10);
+  if (Number.isNaN(n)) {
+    alert('insert a numeric value for score');
     return false;
-    } else {
+  } else {
     return true;
-    }
+  }
 }
 
 function textLimit(input) {
   if (input.value.length > 30) {
-    alert("the name is too long");
+    alert('the name is too long');
     return false;
   }
   return true;
@@ -39,9 +39,9 @@ export default function submitOrNota(event, scoreInput, nameInput) {
     preventOrNot = true;
   }
   if (textLimit(nameInput) === false) {
-  preventOrNot = true;
+    preventOrNot = true;
   }
   if (!preventOrNot) {
-  send(event, nameInput, scoreInput);
+    send(event, nameInput, scoreInput);
   }
 }

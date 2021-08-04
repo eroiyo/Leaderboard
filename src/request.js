@@ -22,6 +22,6 @@ export default class Request {
     this.scoreList = list.result;
     this.scoreList.sort((a, b) => {
       return b.score - a.score;
-    };)
+    },)
   }
 }
