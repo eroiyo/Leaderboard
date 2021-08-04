@@ -15,13 +15,12 @@ function send(e, nameInput, scoreInput) {
 }
 
 function numberValidation(scoreInput) {
-  let n = parseInt(scoreInput.value, 10);
+  const n = parseInt(scoreInput.value, 10);
   if (Number.isNaN(n)) {
     alert('insert a numeric value for score');
     return false;
-  } else {
-    return true;
   }
+  return true;
 }
 
 function textLimit(input) {
