@@ -19,10 +19,9 @@ function ShowOne(object, placenumber) {
   const shownumber = document.createElement('h3');
   const place = document.createElement('h3');
 
-  const {user, score} = object;
 
-  showname.textContent = user;
-  shownumber.textContent = score;
+  showname.textContent = object.user;
+  shownumber.textContent = object.score;
   place.textContent =`#${placenumber}`;
   div.classList.add('score');
   showname.classList.add('showname');
