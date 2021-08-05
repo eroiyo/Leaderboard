@@ -6,7 +6,7 @@ const send = (e, nameInput, scoreInput) => {
   const params = `user=${nameInput.value}&score=${scoreInput.value}`;
   request.open('POST', requestURL, true);
   request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-  request.onreadystatechange = function () {
+  request.onreadystatechange = () => {
     if (request.readyState === 4 && request.status === 200) {
       alert(request.responseText);
     }
@@ -31,7 +31,7 @@ const textLimit = (input) => {
   return true;
 };
 
-export default function submitOrNota(event, scoreInput, nameInput) {
+const submitOrNota = (event, scoreInput, nameInput) => {
   let preventOrNot = false;
   event.preventDefault();
   if (numberValidation(scoreInput) === false) {
@@ -44,3 +44,5 @@ export default function submitOrNota(event, scoreInput, nameInput) {
     send(event, nameInput, scoreInput);
   }
 }
+
+export default submitOrNota;
