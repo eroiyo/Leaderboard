@@ -12,7 +12,7 @@ const send = (e, nameInput, scoreInput) => {
     }
   };
   request.send(params);
-}
+};
 
 const numberValidation = (scoreInput) => {
   const n = parseInt(scoreInput.value, 10);
@@ -21,7 +21,7 @@ const numberValidation = (scoreInput) => {
     return false;
   }
   return true;
-}
+};
 
 const textLimit = (input) => {
   if (input.value.length > 30) {
@@ -29,7 +29,7 @@ const textLimit = (input) => {
     return false;
   }
   return true;
-}
+};
 
 export default function submitOrNota(event, scoreInput, nameInput) {
   let preventOrNot = false;

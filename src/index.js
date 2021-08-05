@@ -13,7 +13,7 @@ const scoreInput = document.getElementById('score-input');
 
 const scores = new Request();
 
-  const ShowOne = (object, placenumber) => {
+const ShowOne = (object, placenumber) => {
   const div = document.createElement('div');
   const showname = document.createElement('h3');
   const shownumber = document.createElement('h3');
@@ -30,7 +30,7 @@ const scores = new Request();
   div.appendChild(showname);
   div.appendChild(shownumber);
   list.appendChild(div);
-}
+};
 
 const showAll = (objectList) => {
   let place = 0;
@@ -38,13 +38,13 @@ const showAll = (objectList) => {
     place += 1;
     ShowOne(object, place);
   });
-}
+};
 
 const antiShowall = (list) => {
   while (list.lastElementChild) {
     list.removeChild(list.lastElementChild);
   }
-}
+};
 
 const refresh = (scores) => {
   setTimeout(async () => {
@@ -52,7 +52,7 @@ const refresh = (scores) => {
     antiShowall(list);
     showAll(scores.scoreList);
   }, 10);
-}
+};
 
 refreshBtn.addEventListener('click', () => {
   refresh(scores);
