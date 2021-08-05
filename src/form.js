@@ -1,7 +1,7 @@
 const request = new XMLHttpRequest();
 const requestURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/x0cx9BASKmFtpOWDZ6De/scores';
 
-function send(e, nameInput, scoreInput) {
+const send = (e, nameInput, scoreInput) => {
   e.preventDefault();
   const params = `user=${nameInput.value}&score=${scoreInput.value}`;
   request.open('POST', requestURL, true);
@@ -14,7 +14,7 @@ function send(e, nameInput, scoreInput) {
   request.send(params);
 }
 
-function numberValidation(scoreInput) {
+const numberValidation = (scoreInput) => {
   const n = parseInt(scoreInput.value, 10);
   if (Number.isNaN(n)) {
     alert('insert a numeric value for score');
@@ -23,7 +23,7 @@ function numberValidation(scoreInput) {
   return true;
 }
 
-function textLimit(input) {
+const textLimit = (input) => {
   if (input.value.length > 30) {
     alert('the name is too long');
     return false;
