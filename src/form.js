@@ -43,6 +43,6 @@ const submitOrNota = (event, scoreInput, nameInput) => {
   if (!preventOrNot) {
     send(event, nameInput, scoreInput);
   }
-}
+};
 
 export default submitOrNota;
