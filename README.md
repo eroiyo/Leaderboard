@@ -1,7 +1,12 @@
-# To Do list: list structure
+# Leaderboard : Api Practice
 
-![Alt text](screenshot.png?raw=true 'Screenshot')
+This exercise is to become more familiar and confortable working with API's
 
+this project features an form and a table, that save and load information in a Leaderboard API
+
+![image](https://user-images.githubusercontent.com/59938389/128348940-abc1de67-3562-43c0-8f91-92944a7d8c16.png)
+
+[Live Version](https://eroiyo.github.io/Leaderboard/)
 ## Getting Started
 
 If you want a copy of this file go to the github repository and download it

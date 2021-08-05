@@ -1,37 +1,37 @@
 const request = new XMLHttpRequest();
 const requestURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/x0cx9BASKmFtpOWDZ6De/scores';
 
-function send(e, nameInput, scoreInput) {
+const send = (e, nameInput, scoreInput) => {
   e.preventDefault();
   const params = `user=${nameInput.value}&score=${scoreInput.value}`;
   request.open('POST', requestURL, true);
   request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-  request.onreadystatechange = function () {
+  request.onreadystatechange = () => {
     if (request.readyState === 4 && request.status === 200) {
       alert(request.responseText);
     }
   };
   request.send(params);
-}
+};
 
-function numberValidation(scoreInput) {
+const numberValidation = (scoreInput) => {
   const n = parseInt(scoreInput.value, 10);
   if (Number.isNaN(n)) {
     alert('insert a numeric value for score');
     return false;
   }
   return true;
-}
+};
 
-function textLimit(input) {
+const textLimit = (input) => {
   if (input.value.length > 30) {
     alert('the name is too long');
     return false;
   }
   return true;
-}
+};
 
-export default function submitOrNota(event, scoreInput, nameInput) {
+const submitOrNota = (event, scoreInput, nameInput) => {
   let preventOrNot = false;
   event.preventDefault();
   if (numberValidation(scoreInput) === false) {
@@ -43,4 +43,6 @@ export default function submitOrNota(event, scoreInput, nameInput) {
   if (!preventOrNot) {
     send(event, nameInput, scoreInput);
   }
-}
+};
+
+export default submitOrNota;
